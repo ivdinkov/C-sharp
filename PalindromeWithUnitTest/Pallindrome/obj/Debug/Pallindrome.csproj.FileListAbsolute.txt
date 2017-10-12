@@ -1,0 +1,6 @@
+C:\Users\iv\Documents\1VS2017_Exercises\SHAZIA\Pallindrome\Pallindrome\bin\Debug\Pallindrome.exe.config
+C:\Users\iv\Documents\1VS2017_Exercises\SHAZIA\Pallindrome\Pallindrome\bin\Debug\Pallindrome.exe
+C:\Users\iv\Documents\1VS2017_Exercises\SHAZIA\Pallindrome\Pallindrome\bin\Debug\Pallindrome.pdb
+C:\Users\iv\Documents\1VS2017_Exercises\SHAZIA\Pallindrome\Pallindrome\obj\Debug\Pallindrome.csproj.CoreCompileInputs.cache
+C:\Users\iv\Documents\1VS2017_Exercises\SHAZIA\Pallindrome\Pallindrome\obj\Debug\Pallindrome.exe
+C:\Users\iv\Documents\1VS2017_Exercises\SHAZIA\Pallindrome\Pallindrome\obj\Debug\Pallindrome.pdb

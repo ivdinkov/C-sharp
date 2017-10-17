@@ -10,7 +10,7 @@ namespace PalindromeUsingStack
     {
         static void Main(string[] args)
         {
-            string s = "navanh";
+            string s = "navan";
             
             if (IsPalindrome(s))
             {
@@ -32,7 +32,8 @@ namespace PalindromeUsingStack
             {
                 myStack.Push(s[i]);
             }
-            for (int i = 0; i < s.Length; i++)
+
+            while (myStack.Count != 0)
             {
                 e += myStack.Pop();
             }

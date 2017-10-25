@@ -10,9 +10,6 @@ namespace IntOnlyListFilterLINQ
     {
         public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
         {
-
-            //IEnumerable<int> mList = listOfItems.OfType<int>();
-
             return listOfItems.OfType<int>();
         }
     }

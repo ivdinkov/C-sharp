@@ -12,11 +12,11 @@ namespace IntOnlyListFilterLINQ
         {
             IEnumerable<int> resultList;
 
-            resultList = ListFilterer.GetIntegersFromList(new List<object>() { 1, 2, "a", "b" });
+            resultList = ListFilterer.GetIntegersFromList(new List<object>() { 1, -2, "aasf", "1", "123", 123 });
 
             foreach (var item in resultList)
             {
-                Console.WriteLine(item + Environment.NewLine);
+                Console.WriteLine(item);
             }
 
             Console.ReadLine();

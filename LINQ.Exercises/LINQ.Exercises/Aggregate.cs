@@ -24,7 +24,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Count_all_occurences_of_1()
         {
-            int result = TestData.Numbers.Where(n=>n ==1).Count();
+            int result = TestData.Numbers.Count(n => n == 1);
 
             Assert.AreEqual(2, result);
         }
@@ -33,7 +33,7 @@ namespace LINQ.Exercises
         public void Count_all_animals_having_character_count_equal_to_5()
         {
             // Hint: use nested count
-            int result = TestData.Animals.Where(a=>a.Length == 5).Count();
+            int result = TestData.Animals.Count(a => a.Length == 5);
 
             Assert.AreEqual(2, result);
         }
@@ -49,7 +49,10 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Sum_all_characters_in_animal_names()
         {
-            int result = TestData.Animals.Select(a=>a.Length).Sum();
+            // version 1
+            //int result = TestData.Animals.Select(a=>a.Length).Sum();
+            // version 2
+            int result = TestData.Animals.Sum(a=>a.Count());
 
             Assert.AreEqual(38, result);
         }
@@ -57,7 +60,10 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Sum_all_birth_years()
         {
-            int result = TestData.People.Select(y=>y.Born.Year).Sum();
+            // version 1
+            //int result = TestData.People.Select(y=>y.Born.Year).Sum();
+            // version 2
+            int result = TestData.People.Sum(y => y.Born.Year);
 
             Assert.AreEqual(7915, result);
         }
@@ -73,15 +79,20 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Find_length_of_shortest_animal_name()
         {
-            int result = TestData.Animals.Select(n=>n.Length).Min();
-
+            // version 1
+            //int result = TestData.Animals.Select(n=>n.Length).Min();
+            // version 2
+            int result = TestData.Animals.Min(n => n.Length);
             Assert.AreEqual(4, result);
         }
 
         [TestMethod]
         public void Find_earliest_birthday()
         {
-            DateTime result = TestData.People.OrderBy(a=>a.Born).First().Born;
+            // version 1
+            //DateTime result = TestData.People.OrderBy(a=>a.Born).First();
+            // version 2
+            DateTime result = TestData.People.Min(a => a.Born);
 
             Assert.AreEqual(new DateTime(1950, 12, 1), result);
         }
@@ -97,15 +108,20 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Find_length_of_longest_animal_name()
         {
-            int result = TestData.Animals.Select(n => n.Length).Max();
-
+            // version 1
+            //int result = TestData.Animals.Select(n => n.Length).Max();
+            //version 2
+            int result = TestData.Animals.Max(n => n.Length);
             Assert.AreEqual(9, result);
         }
 
         [TestMethod]
         public void Find_latest_birthday()
         {
-            DateTime result = TestData.People.OrderByDescending(a=>a.Born).First().Born;
+            // version 1
+            //DateTime result = TestData.People.OrderByDescending(a=>a.Born).First().Born;
+            // version 2
+            DateTime result = TestData.People.Max(a => a.Born);
 
             Assert.AreEqual(new DateTime(2001, 5, 21), result);
         }
@@ -121,7 +137,11 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Find_average_of_birth_years()
         {
-            double result = TestData.People.Select(p=>p.Born.Year).Average();
+            // version 1
+            //double result = TestData.People.Select(p=>p.Born.Year).Average();
+            // version 2
+            double result = TestData.People.Average(p => p.Born.Year);
+
 
             Assert.AreEqual(1978.75, result);
         }
@@ -154,7 +174,7 @@ namespace LINQ.Exercises
             // if this day is bigger than 15, then substract 10 from it
             // else add 5 to it
             // and add resulting number to your aggregate
-            int result = TestData.People.Aggregate(0, (sum, person) => 1);
+            int result = TestData.People.Aggregate(256, (sum, person) => sum + (person.Born.Day > 15 ? (person.Born.Day - 10) : (person.Born.Day + 5)));
 
             Assert.AreEqual(296, result);
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace LINQ.Exercises
 {
     /// <summary>
+    /// 
     /// Data used for tests.
     /// Don't change it in any way, order and content of each test data set is important.
     /// </summary>

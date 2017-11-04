@@ -8,6 +8,8 @@ namespace LINQ.Exercises
     /// Your task is to apply LINQ `Count/Sum/Min/Max/Average/Aggregate` methods, so all tests will be passed.
     /// Make sure to preview test data located in TestData.cs file.
     /// Don't modify assertions or test data, all you need to do is to apply LINQ method so `result` variable will have expected value(s).
+	
+	
     /// </summary>
     [TestClass]
     public class Aggregate

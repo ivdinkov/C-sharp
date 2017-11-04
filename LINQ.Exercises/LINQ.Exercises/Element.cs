@@ -23,7 +23,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void First_n_less_than_0()
         {
-            int result = TestData.Numbers.First();
+            int result = TestData.Numbers.Where(n=>n<0).First();
 
             Assert.AreEqual(-3, result);
         }
@@ -31,7 +31,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Last_n_greater_than_0()
         {
-            int result = TestData.Numbers.Last();
+            int result = TestData.Numbers.Where(n=>n>0).Last();
 
             Assert.AreEqual(5, result);
         }
@@ -39,7 +39,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void First_even_n()
         {
-            int result = TestData.Numbers.First();
+            int result = TestData.Numbers.Where(n=>n%2==0).First();
 
             Assert.AreEqual(2, result);
         }
@@ -47,7 +47,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Last_even_n()
         {
-            int result = TestData.Numbers.Last();
+            int result = TestData.Numbers.Where(n => n % 2 == 0).Last();
 
             Assert.AreEqual(-4, result);
         }
@@ -71,7 +71,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Last_elephant()
         {
-            string result = TestData.Animals.Last();
+            string result = TestData.Animals.OrderByDescending(a=>a).Last();
 
             Assert.AreEqual("elephant", result);
         }
@@ -79,7 +79,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void First_string_having_4_letters()
         {
-            string result = TestData.Animals.First();
+            string result = TestData.Animals.Where(a=>a.Length==4).First();
 
             Assert.AreEqual("lion", result);
         }
@@ -87,7 +87,7 @@ namespace LINQ.Exercises
         [TestMethod]
         public void Last_string_containg_g()
         {
-            string result = TestData.Animals.Last();
+            string result = TestData.Animals.Where(a=>a.Contains("g")).Last();
 
             Assert.AreEqual("penguin", result);
         }

@@ -1,1 +1,0 @@
-﻿DBCC CHECKIDENT (Product, RESEED, 999)
